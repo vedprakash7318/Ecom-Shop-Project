@@ -1,6 +1,8 @@
 import React from 'react'
 import './CSS/ProductCard.css'
+import { useCart } from '../Context/CartContext'
 const ProductCard = ({product}) => {
+  const {addToCart} =useCart();
   return (
     <>
         <div className='product-card-outer'>
@@ -10,7 +12,7 @@ const ProductCard = ({product}) => {
         <p>{product.price}</p>
 
        <div className='product-btn-outer'>
-         <button>Add to cart</button>
+         <button onClick={()=>addToCart(product)}>Add to cart</button>
         <button>Buy Now</button>
        </div>
         </div>

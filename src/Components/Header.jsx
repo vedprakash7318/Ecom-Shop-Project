@@ -1,6 +1,12 @@
 import React from 'react'
 import './CSS/Header.css'
+import { useCart } from '../Context/CartContext'
+import { useNavigate } from 'react-router-dom'
 const Header = () => {
+    const {cart} = useCart();
+    const navigate = useNavigate();
+
+    const totalItems = cart.reduce((sum ,item)=>sum+item.qty,0)
   return (
     <>
         <div className="header-outer">
@@ -17,7 +23,7 @@ const Header = () => {
             </div>
             <div className="header-btn">
                 <button>Login</button>
-                <button> <i class="bi bi-cart4"></i> My Cart</button>
+                <button onClick={()=>navigate("/cart")}> <i class="bi bi-cart4"></i> My Cart {totalItems}</button>
             </div>
         </div>
     
