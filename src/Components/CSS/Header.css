@@ -52,6 +52,7 @@
     display: flex;
     background-color: rgb(242, 242, 242);
     box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+    position: relative;
 }
 .search-icon{
     height: 100%;
@@ -69,6 +70,7 @@
     background-color: transparent;
     font-size: 20px;
     padding: 0px 7px;
+    
 }
 .header-btn{
     height: 100%;
@@ -93,4 +95,27 @@
     border-radius: 10px;
     color: white;
     font-weight: bold;
+}
+
+
+.search-placeholder{
+    position: absolute;
+    left: 40px;
+    top: 30%;
+    transform: translateY(-30%);
+    pointer-events: none;
+    animation: slide 0.4s ease-in-out;
+    color: #8888;
+}
+
+
+@keyframes slide{
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-30%);
+    }
 }

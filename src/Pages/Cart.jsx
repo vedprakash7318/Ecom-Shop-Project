@@ -68,6 +68,8 @@ const handleApplyCupon =()=>{
     console.log(cupanCode)
 }
 const total = cart.reduce((sum,item)=>sum+item.price*item.qty,0)
+console.log(total);
+
 useEffect(()=>{
     setfinalTotal(total)
 },[])
